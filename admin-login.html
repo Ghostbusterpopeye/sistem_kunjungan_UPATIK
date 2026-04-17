@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Admin Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .admin-alert {
+            background-color: #fef3c7;
+            color: #92400e;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .admin-login-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            max-width: 400px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .admin-login-header {
+            background-color: #1a365d;
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+        }
+        .admin-login-header h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+        .admin-login-header p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: #cbd5e1;
+        }
+        .admin-login-body {
+            padding: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #334155;
+            font-weight: 600;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-family: inherit;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            border-color: #1a365d;
+        }
+        .btn-admin-login {
+            background-color: #1e3a8a;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        .btn-admin-login:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin-alert">
+        <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: #d97706;"></i>
+        <div>
+            <strong style="display: block; margin-bottom: 3px;">Akses Terbatas</strong>
+            Halaman ini hanya untuk staff teknis UPA TIK Polije yang berwenang.
+        </div>
+    </div>
+
+    <div class="admin-login-card">
+        <div class="admin-login-header">
+            <h2>Portal Staff</h2>
+            <p>Masukkan kredensial dan kode akses Anda</p>
+        </div>
+        <div class="admin-login-body">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="admin-user" placeholder="Masukkan username admin">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="admin-pass" placeholder="Masukkan password">
+            </div>
+            <button class="btn-admin-login" onclick="loginAdmin()">Masuk</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function loginAdmin() {
+            sessionStorage.setItem('isLoggedIn', 'true');
+            sessionStorage.setItem('userRole', 'admin');
+            window.location.href = 'admin-dashboard.html';
+        }
+    </script>
+</body>
+</html>

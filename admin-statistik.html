@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Statistik Tahunan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ADMIN LAYOUT -->
+    <div id="admin-layout">
+        
+        <aside class="admin-sidebar">
+            <div class="admin-logo" onclick="window.location.href='admin-dashboard.html'">
+                <i class="fas fa-chart-pie" style="color: #2563eb; background: #eef2ff; padding: 5px; border-radius: 6px;"></i>
+                <span>UPATIK Admin</span>
+            </div>
+            
+            <div class="admin-search-sidebar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <ul class="admin-menu">
+                <li onclick="window.location.href='admin-dashboard.html'">
+                    <i class="far fa-window-restore"></i> Dashboard
+                </li>
+                <li onclick="window.location.href='admin-pengguna.html'">
+                    <i class="fas fa-users"></i> Pengguna
+                </li>
+                <li onclick="window.location.href='admin-layanan.html'">
+                    <i class="far fa-file-alt"></i> Layanan
+                </li>
+                <li class="active" onclick="window.location.href='admin-statistik.html'">
+                    <i class="fas fa-globe"></i> Statistik
+                </li>
+            </ul>
+            
+            <div class="admin-sidebar-bottom">
+                <div class="admin-sidebar-profile">
+                    <img src="https://ui-avatars.com/api/?name=Gustavo+Xavier&background=0D8ABC&color=fff&rounded=true" alt="User">
+                    <div class="admin-sidebar-profile-text">
+                        <strong>Gustavo Xavier</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <ul class="admin-menu" style="padding:0;">
+                    <li><i class="fas fa-cog"></i> Settings</li>
+                    <li onclick="logoutUser()" style="color: #3b82f6;"><i class="fas fa-sign-out-alt" style="color: #3b82f6;"></i> Log out</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+            <div class="admin-page-title">Statistik Tahunan</div>
+            
+            <div class="statistik-container">
+                <!-- Grafik -->
+                <div class="alytics-card">
+                    <h3>Grafik Kunjungan<br>Bulanan</h3>
+                    
+                    <div style="padding: 20px; height: 250px;">
+                        <canvas id="kunjunganChart" style="width: 100%; height: 100%;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Ringkasan Kanan -->
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="stat-summary-cards">
+                        <div class="stat-summary-card">
+                            <span>Total Tahunan</span>
+                            <strong>232</strong>
+                        </div>
+                        <div class="stat-summary-card">
+                            <span>Total Selesai</span>
+                            <strong>67</strong>
+                        </div>
+                        <div class="stat-summary-card">
+                            <span>Rata Rata<br>Bulan</span>
+                            <strong class="text-purple">20</strong>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-tambah-layanan" style="align-self: flex-start;" onclick="alert('Mencetak Laporan...')">Cetak Laporan</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Check session
+        if(sessionStorage.getItem('isLoggedIn') !== 'true' || sessionStorage.getItem('userRole') !== 'admin') {
+            window.location.href = 'login.html';
+        }
+
+        // Initialize Curved Chart
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('kunjunganChart').getContext('2d');
+            
+            // Create a gradient for the line fill
+            let gradient = ctx.createLinearGradient(0, 0, 0, 250);
+            gradient.addColorStop(0, 'rgba(37, 99, 235, 0.4)');
+            gradient.addColorStop(1, 'rgba(37, 99, 235, 0.0)');
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Feb', 'Apr', 'Jun', 'Jul', 'Aug', 'Oct', 'Dec'],
+                    datasets: [{
+                        label: 'Total Kunjungan',
+                        data: [20, 30, 45, 60, 40, 30, 75],
+                        borderColor: '#2563eb',
+                        backgroundColor: gradient,
+                        borderWidth: 3,
+                        tension: 0.4, // This creates the smooth curve
+                        fill: true,
+                        pointBackgroundColor: '#ffffff',
+                        pointBorderColor: '#2563eb',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleFont: { family: 'Inter', size: 13 },
+                            bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+                            padding: 10,
+                            displayColors: false,
+                            cornerRadius: 8
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false, drawBorder: false },
+                            ticks: { font: { family: 'Inter', size: 12 }, color: '#64748b' }
+                        },
+                        y: {
+                            display: false,
+                            min: 0,
+                            max: 100
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index',
+                    },
+                }
+            });
+        });
+    </script>
+</body>
+</html>

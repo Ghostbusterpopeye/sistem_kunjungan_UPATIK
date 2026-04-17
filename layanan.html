@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Layanan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #f4f7fb;">
+
+    <!-- PUBLIC LAYOUT -->
+    <div id="public-layout" style="display: flex;">
+        <header class="public-header">
+            <div class="container header-container">
+                <div class="logo-area" onclick="window.location.href='index.html'">
+                    <i class="fas fa-desktop logo-icon"></i>
+                    <div class="logo-text">
+                        <strong>UPA TIK</strong>
+                        <span>Politeknik Negeri Jember</span>
+                    </div>
+                </div>
+                <nav class="top-nav">
+                    <ul>
+                        <li onclick="window.location.href='index.html'">Home</li>
+                        <li class="active" onclick="window.location.href='layanan.html'">Services</li>
+                        <li><button class="btn-top-login" onclick="window.location.href='login.html'">Login</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="public-main">
+            <!-- PAGE: LAYANAN -->
+            <section id="page-layanan" class="page active" style="display: block;">
+                <div class="container page-padding">
+                    <div class="text-center" style="margin-bottom: 40px;">
+                        <h2>Layanan Prioritas Kami</h2>
+                        <p class="subtitle">Kami menyediakan berbagai layanan teknis untuk mendukung kebutuhan digital Mahasiswa dan Dosen.</p>
+                    </div>
+                    <div class="public-services-grid">
+                        <div class="pub-service-card" onclick="window.location.href='login.html'">
+                            <div class="icon-wrapper"><i class="fas fa-user-alt"></i></div>
+                            <span class="badge-role">UNTUK MAHASISWA</span>
+                            <h3>Aktivasi Akun SSO</h3>
+                            <p>Layanan pembuatan dan aktivasi akun Single Sign On untuk Mahasiswa Baru.</p>
+                        </div>
+                        <div class="pub-service-card" onclick="window.location.href='login.html'">
+                            <div class="icon-wrapper"><i class="fas fa-database"></i></div>
+                            <span class="badge-role">UNTUK MAHASISWA</span>
+                            <h3>Perbaikan Data Mahasiswa</h3>
+                            <p>Perubahan atau perbaikan data profil mahasiswa pada sistem informasi akademik.</p>
+                        </div>
+                        <div class="pub-service-card" onclick="window.location.href='login.html'">
+                            <div class="icon-wrapper"><i class="fas fa-shield-alt"></i></div>
+                            <span class="badge-role">UNTUK DOSEN</span>
+                            <h3>Aktivasi VPN</h3>
+                            <p>Akses jaringan internal kampus dari luar area Politeknik Negeri Jember.</p>
+                        </div>
+                        <div class="pub-service-card" onclick="window.location.href='login.html'">
+                            <div class="icon-wrapper"><i class="fas fa-file-signature"></i></div>
+                            <span class="badge-role">UNTUK DOSEN</span>
+                            <h3>Bantuan Input Nilai</h3>
+                            <p>Pendampingan teknis terkait sistem penilaian dan entri nilai mahasiswa.</p>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top:40px;">
+                        <button class="btn-solid-blue" onclick="window.location.href='login.html'">Login untuk Akses Layanan Lainnya</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="public-footer">
+            <div class="container footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo-area">
+                        <strong>UPA TIK Polije</strong>
+                    </div>
+                    <p>Unit Penunjang Akademik Teknologi Informasi dan Komunikasi (UPA TIK) menyediakan infrastruktur dan layanan digital untuk mendukung kegiatan akademik di Politeknik Negeri Jember.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hubungi Kami</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Mastrip, Jember, Jawa Timur</li>
+                        <li><i class="fas fa-phone-alt"></i> (0331) 333532</li>
+                        <li><i class="fas fa-envelope"></i> upt-tik@polije.ac.id</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Jam Layanan</h4>
+                    <p>Senin - Kamis: 07:30 - 16:00</p>
+                    <p>Jumat: 07:30 - 16:30</p>
+                    <p class="text-blue-light">Sabtu & Minggu: Tutup</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 UPA TIK Politeknik Negeri Jember. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

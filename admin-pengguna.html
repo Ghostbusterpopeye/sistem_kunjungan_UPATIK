@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Admin Pengguna</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ADMIN LAYOUT -->
+    <div id="admin-layout">
+        
+        <aside class="admin-sidebar">
+            <div class="admin-logo" onclick="window.location.href='admin-dashboard.html'">
+                <i class="fas fa-chart-pie" style="color: #2563eb; background: #eef2ff; padding: 5px; border-radius: 6px;"></i>
+                <span>UPATIK Admin</span>
+            </div>
+            
+            <div class="admin-search-sidebar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <ul class="admin-menu">
+                <li onclick="window.location.href='admin-dashboard.html'">
+                    <i class="far fa-window-restore"></i> Dashboard
+                </li>
+                <li class="active" onclick="window.location.href='admin-pengguna.html'">
+                    <i class="fas fa-users"></i> Pengguna
+                </li>
+                <li onclick="window.location.href='admin-layanan.html'">
+                    <i class="far fa-file-alt"></i> Layanan
+                </li>
+                <li onclick="window.location.href='admin-statistik.html'">
+                    <i class="fas fa-globe"></i> Statistik
+                </li>
+            </ul>
+            
+            <div class="admin-sidebar-bottom">
+                <div class="admin-sidebar-profile">
+                    <img src="https://ui-avatars.com/api/?name=Gustavo+Xavier&background=0D8ABC&color=fff&rounded=true" alt="User">
+                    <div class="admin-sidebar-profile-text">
+                        <strong>Gustavo Xavier</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <ul class="admin-menu" style="padding:0;">
+                    <li><i class="fas fa-cog"></i> Settings</li>
+                    <li onclick="logoutUser()" style="color: #3b82f6;"><i class="fas fa-sign-out-alt" style="color: #3b82f6;"></i> Log out</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+            <div class="admin-page-title">Daftar Pengguna</div>
+            
+            <div class="alytics-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3 style="margin: 0;">Semua Pengguna</h3>
+                    <div class="search-box" style="display: flex; align-items: center; background-color: #f8fafc; border: 1px solid #f1f5f9; border-radius: 8px; padding: 6px 12px; gap: 8px;">
+                        <i class="fas fa-search" style="color: #94a3b8; font-size: 0.8rem;"></i>
+                        <input type="text" placeholder="Cari pengguna..." style="border: none; background: transparent; outline: none; font-size: 0.8rem; width: 150px;">
+                    </div>
+                </div>
+
+                <div class="alytics-list">
+                    <div class="alytics-list-item">
+                        <img src="https://ui-avatars.com/api/?name=Budiono+Siregar&background=f59e0b&color=fff&rounded=true" alt="User">
+                        <div class="alytics-list-info" style="flex: 2;">
+                            <strong>Budiono Siregar</strong>
+                            <span>Mahasiswa</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <span class="badge-admin badge-active">Active</span>
+                        </div>
+                        <div class="alytics-list-actions">
+                            <span class="text-link" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; cursor: pointer; color: #0f172a; font-size: 0.8rem; font-weight: 500;" onclick="openModal()">Edit User</span>
+                        </div>
+                    </div>
+
+                    <div class="alytics-list-item">
+                        <img src="https://ui-avatars.com/api/?name=Layla+Ismah&background=ec4899&color=fff&rounded=true" alt="User">
+                        <div class="alytics-list-info" style="flex: 2;">
+                            <strong>Layla Ismah Caren</strong>
+                            <span>Mahasiswa</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <span class="badge-admin badge-active">Active</span>
+                        </div>
+                        <div class="alytics-list-actions">
+                            <span class="text-link" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; cursor: pointer; color: #0f172a; font-size: 0.8rem; font-weight: 500;" onclick="openModal()">Edit User</span>
+                        </div>
+                    </div>
+
+                    <div class="alytics-list-item">
+                        <img src="https://ui-avatars.com/api/?name=Satrio+Pandu&background=10b981&color=fff&rounded=true" alt="User">
+                        <div class="alytics-list-info" style="flex: 2;">
+                            <strong>Satrio Pandu</strong>
+                            <span>Mahasiswa</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <span class="badge-admin badge-active">Active</span>
+                        </div>
+                        <div class="alytics-list-actions">
+                            <span class="text-link" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; cursor: pointer; color: #0f172a; font-size: 0.8rem; font-weight: 500;" onclick="openModal()">Edit User</span>
+                        </div>
+                    </div>
+
+                    <div class="alytics-list-item">
+                        <img src="https://ui-avatars.com/api/?name=M+Benedicta&background=8b5cf6&color=fff&rounded=true" alt="User">
+                        <div class="alytics-list-info" style="flex: 2;">
+                            <strong>M.M Benedicta Aktivasi</strong>
+                            <span>Dosen</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <span class="badge-admin badge-active">Active</span>
+                        </div>
+                        <div class="alytics-list-actions">
+                            <span class="text-link" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; cursor: pointer; color: #0f172a; font-size: 0.8rem; font-weight: 500;" onclick="openModal()">Edit User</span>
+                        </div>
+                    </div>
+
+                    <div class="alytics-list-item">
+                        <img src="https://ui-avatars.com/api/?name=Reza+Auditore&background=f43f5e&color=fff&rounded=true" alt="User">
+                        <div class="alytics-list-info" style="flex: 2;">
+                            <strong>Reza Auditore</strong>
+                            <span>Mahasiswa</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <span class="badge-admin badge-inactive">Inactive</span>
+                        </div>
+                        <div class="alytics-list-actions">
+                            <span class="text-link" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; cursor: pointer; color: #0f172a; font-size: 0.8rem; font-weight: 500;" onclick="openModal()">Edit User</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Riwayat Kunjungan Pengguna -->
+    <div class="modal-overlay" id="modal-detail">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Riwayat Kunjungan</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">
+                    Budiono Siregar &nbsp;&nbsp;&nbsp; E3120055
+                </div>
+                <div class="detail-grid" style="grid-template-columns: 1fr;">
+                    <div style="display: flex; gap: 40px; margin-bottom: 10px;">
+                        <div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Total Kunjungan</span> &nbsp; 3
+                        </div>
+                        <div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Masalah Selesai</span> &nbsp; 2
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <label>Catatan Admin</label>
+                        <textarea style="width: 100%; border: 1px solid #cbd5e1; border-radius: 4px; padding: 10px; min-height: 60px;" placeholder="Masukkan catatan khusus..."></textarea>
+                    </div>
+                    <div>
+                        <button class="btn-tandai" onclick="alert('Catatan Disimpan')">Simpan Catatan</button>
+                    </div>
+                </div>
+
+                <div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; margin-top: 20px;">Riwayat Kunjungan</div>
+                <div class="alytics-card" style="padding: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: none;">
+                    <table class="admin-table" style="background: transparent;">
+                        <thead>
+                            <tr>
+                                <th>Jenis Layanan</th>
+                                <th>Tanggal</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SSO Email</td>
+                                <td>5 - 02 - 2026</td>
+                                <td><span class="badge-admin badge-tertunda">Tertunda</span></td>
+                            </tr>
+                            <tr>
+                                <td>Reset Password</td>
+                                <td>8 - 01 - 2026</td>
+                                <td><span class="badge-admin badge-selesai">Selesai</span></td>
+                            </tr>
+                            <tr>
+                                <td>SSO Email</td>
+                                <td>7 - 08 - 2025</td>
+                                <td><span class="badge-admin badge-selesai">Selesai</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check session
+        if(sessionStorage.getItem('isLoggedIn') !== 'true' || sessionStorage.getItem('userRole') !== 'admin') {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

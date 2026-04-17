@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Form Layanan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e2e8f0;
+            background-image: radial-gradient(circle at top right, #cbd5e1 0%, #e2e8f0 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRIVATE LAYOUT (SIDEBAR DASHBOARD) -->
+    <div id="private-layout" style="display: flex;">
+        <div class="main-container">
+            <div class="web-frame">
+                <nav class="sidebar">
+                    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+                    <div class="sidebar-user-info">
+                        <div class="upa-avatar-placeholder"></div>
+                        <h4>Portal User</h4>
+                    </div>
+                    <ul>
+                        <li onclick="window.location.href='user-riwayat.html'"><i class="fas fa-history"></i> Riwayat</li>
+                        <li class="active" onclick="window.location.href='user-form.html'"><i class="fas fa-plus-circle"></i> Buat Layanan</li>
+                        <li onclick="logoutUser()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</li>
+                    </ul>
+                </nav>
+
+                <main class="content-area light-bg">
+                    <!-- PAGE: FORM LAYANAN -->
+                    <section id="page-form-layanan" class="page active" style="display: block;">
+                        <h1 class="content-title">Form Layanan</h1>
+                        <div class="form-container-card" style="margin: 0; max-width: 600px;">
+                            <div class="form-group">
+                                <label>Nama Lengkap:</label>
+                                <input type="text" placeholder="Masukkan nama anda">
+                            </div>
+                            <div class="form-group">
+                                <label>NIM / NIK atau Email:</label>
+                                <input type="text" placeholder="Masukkan identitas">
+                            </div>
+                            <div class="form-group">
+                                <label>Kategori Masalah:</label>
+                                <select class="custom-select">
+                                    <option>Aktivasi Akun SSO</option>
+                                    <option>Perbaikan Data</option>
+                                    <option>Aktivasi VPN</option>
+                                    <option>Bantuan Input Nilai</option>
+                                    <option>Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Deskripsi Masalah:</label>
+                                <textarea rows="4" placeholder="Jelaskan kendala secara detail..."></textarea>
+                            </div>
+                            <button class="btn-kirim" onclick="alert('Laporan Terkirim!'); window.location.href='user-riwayat.html'">Kirim Pengajuan</button>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check session
+        if(sessionStorage.getItem('isLoggedIn') !== 'true' || sessionStorage.getItem('userRole') !== 'user') {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

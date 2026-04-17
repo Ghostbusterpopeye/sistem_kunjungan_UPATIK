@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Layanan UPATIK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ADMIN LAYOUT -->
+    <div id="admin-layout">
+        
+        <aside class="admin-sidebar">
+            <div class="admin-logo" onclick="window.location.href='admin-dashboard.html'">
+                <i class="fas fa-chart-pie" style="color: #2563eb; background: #eef2ff; padding: 5px; border-radius: 6px;"></i>
+                <span>UPATIK Admin</span>
+            </div>
+            
+            <div class="admin-search-sidebar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <ul class="admin-menu">
+                <li onclick="window.location.href='admin-dashboard.html'">
+                    <i class="far fa-window-restore"></i> Dashboard
+                </li>
+                <li onclick="window.location.href='admin-pengguna.html'">
+                    <i class="fas fa-users"></i> Pengguna
+                </li>
+                <li class="active" onclick="window.location.href='admin-layanan.html'">
+                    <i class="far fa-file-alt"></i> Layanan
+                </li>
+                <li onclick="window.location.href='admin-statistik.html'">
+                    <i class="fas fa-globe"></i> Statistik
+                </li>
+            </ul>
+            
+            <div class="admin-sidebar-bottom">
+                <div class="admin-sidebar-profile">
+                    <img src="https://ui-avatars.com/api/?name=Gustavo+Xavier&background=0D8ABC&color=fff&rounded=true" alt="User">
+                    <div class="admin-sidebar-profile-text">
+                        <strong>Gustavo Xavier</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <ul class="admin-menu" style="padding:0;">
+                    <li><i class="fas fa-cog"></i> Settings</li>
+                    <li onclick="logoutUser()" style="color: #3b82f6;"><i class="fas fa-sign-out-alt" style="color: #3b82f6;"></i> Log out</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+            <div class="admin-page-title">Layanan UPATIK</div>
+            
+            <div class="layanan-grid">
+                <!-- Layanan Card 1 -->
+                <div class="alytics-card" style="padding: 20px; position: relative;">
+                    <span class="layanan-status-text text-on">On</span>
+                    <h4>Reset Password</h4>
+                    <p>Layanan utama untuk civitas akademika Polije.</p>
+                    <button class="toggle-btn toggle-off" onclick="toggleLayanan(this)">OFF</button>
+                </div>
+                <!-- Layanan Card 2 -->
+                <div class="alytics-card" style="padding: 20px; position: relative;">
+                    <span class="layanan-status-text text-on">On</span>
+                    <h4>Pemasangan VPN</h4>
+                    <p>Layanan utama untuk civitas akademika Polije.</p>
+                    <button class="toggle-btn toggle-on" onclick="toggleLayanan(this)">ON</button>
+                </div>
+                <!-- Layanan Card 3 -->
+                <div class="alytics-card" style="padding: 20px; position: relative;">
+                    <span class="layanan-status-text text-on">On</span>
+                    <h4>Keluhan</h4>
+                    <p>Layanan utama untuk civitas akademika Polije.</p>
+                    <button class="toggle-btn toggle-on" onclick="toggleLayanan(this)">ON</button>
+                </div>
+                <!-- Layanan Card 4 -->
+                <div class="alytics-card" style="padding: 20px; position: relative;">
+                    <span class="layanan-status-text text-on">On</span>
+                    <h4>Maintenance</h4>
+                    <p>Layanan utama untuk civitas akademika Polije.</p>
+                    <button class="toggle-btn toggle-off" onclick="toggleLayanan(this)">OFF</button>
+                </div>
+                <!-- Layanan Card 5 -->
+                <div class="alytics-card" style="padding: 20px; position: relative;">
+                    <span class="layanan-status-text text-off">Off</span>
+                    <h4>E-Learning</h4>
+                    <p>Layanan utama untuk civitas akademika Polije.</p>
+                    <button class="toggle-btn toggle-on" onclick="toggleLayanan(this)">ON</button>
+                </div>
+            </div>
+
+            <button class="btn-tambah-layanan">Tambah Layanan</button>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check session
+        if(sessionStorage.getItem('isLoggedIn') !== 'true' || sessionStorage.getItem('userRole') !== 'admin') {
+            window.location.href = 'login.html';
+        }
+
+        // Toggle function (UI only)
+        function toggleLayanan(btn) {
+            if(btn.classList.contains('toggle-on')) {
+                btn.classList.remove('toggle-on');
+                btn.classList.add('toggle-off');
+                btn.textContent = 'OFF';
+                btn.previousElementSibling.previousElementSibling.previousElementSibling.textContent = 'Off';
+                btn.previousElementSibling.previousElementSibling.previousElementSibling.className = 'layanan-status-text text-off';
+            } else {
+                btn.classList.remove('toggle-off');
+                btn.classList.add('toggle-on');
+                btn.textContent = 'ON';
+                btn.previousElementSibling.previousElementSibling.previousElementSibling.textContent = 'On';
+                btn.previousElementSibling.previousElementSibling.previousElementSibling.className = 'layanan-status-text text-on';
+            }
+        }
+    </script>
+</body>
+</html>

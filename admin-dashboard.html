@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ADMIN LAYOUT -->
+    <div id="admin-layout">
+        
+    <aside class="admin-sidebar">
+        <div class="admin-logo" onclick="window.location.href='admin-dashboard.html'">
+            <i class="fas fa-chart-pie" style="color: #2563eb; background: #eef2ff; padding: 5px; border-radius: 6px;"></i>
+            <span>UPATIK Admin</span>
+        </div>
+        
+        <div class="admin-search-sidebar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+        <ul class="admin-menu">
+            <li class="active" onclick="window.location.href='admin-dashboard.html'">
+                <i class="far fa-window-restore"></i> Dashboard
+            </li>
+            <li onclick="window.location.href='admin-pengguna.html'">
+                <i class="fas fa-users"></i> Pengguna
+            </li>
+            <li onclick="window.location.href='admin-layanan.html'">
+                <i class="far fa-file-alt"></i> Layanan
+            </li>
+            <li onclick="window.location.href='admin-statistik.html'">
+                <i class="fas fa-globe"></i> Statistik
+            </li>
+        </ul>
+        
+        <div class="admin-sidebar-bottom">
+            <div class="admin-sidebar-profile">
+                <img src="https://ui-avatars.com/api/?name=Gustavo+Xavier&background=0D8ABC&color=fff&rounded=true" alt="User">
+                <div class="admin-sidebar-profile-text">
+                    <strong>Gustavo Xavier</strong>
+                    <span>Admin</span>
+                </div>
+            </div>
+            <ul class="admin-menu" style="padding:0;">
+                <li><i class="fas fa-cog"></i> Settings</li>
+                <li onclick="logoutUser()" style="color: #3b82f6;">
+                    <i class="fas fa-sign-out-alt" style="color: #3b82f6;"></i> Log out
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+        <main class="admin-content">
+            
+            <!-- TOP CARDS -->
+            <div class="admin-top-cards">
+                <!-- Card 1 -->
+                <div class="alytics-card alytics-stat-card">
+                    <h3>Total Pending</h3>
+                    <div class="stat-value">12 <span class="stat-trend" style="color:#ef4444;"><i class="fas fa-arrow-up"></i></span></div>
+                    <div class="stat-desc">Meningkat dari minggu lalu</div>
+                    <a href="#" class="card-link-bottom">Laporan pending &rarr;</a>
+                </div>
+                <!-- Card 2 -->
+                <div class="alytics-card alytics-stat-card">
+                    <h3>Total Selesai</h3>
+                    <div class="stat-value">96</div>
+                    <div class="stat-desc">Anda menyelesaikan 96 dari 100 tiket</div>
+                    <a href="#" class="card-link-bottom">Semua tiket &rarr;</a>
+                </div>
+            </div>
+
+            <!-- MIDDLE CARDS -->
+            <div class="admin-middle-cards">
+                <!-- Customers (Antrean) -->
+                <div class="alytics-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0;">Daftar Antrean</h3>
+                        <span style="font-size: 0.8rem; color: #64748b; cursor: pointer;">Sort by Newest <i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    
+                    <div class="alytics-list">
+                        <div class="alytics-list-item">
+                            <img src="https://ui-avatars.com/api/?name=Budiono+Siregar&background=f59e0b&color=fff&rounded=true" alt="User">
+                            <div class="alytics-list-info">
+                                <strong>Budiono Siregar</strong>
+                                <span>SSO Email (Mahasiswa)</span>
+                            </div>
+                            <div class="alytics-list-actions">
+                                <i class="far fa-comment-dots" onclick="openModal()"></i>
+                                <i class="far fa-star"></i>
+                                <i class="fas fa-check" onclick="alert('Ditandai selesai')"></i>
+                            </div>
+                        </div>
+                        <div class="alytics-list-item active">
+                            <img src="https://ui-avatars.com/api/?name=Layla+Ismah&background=ec4899&color=fff&rounded=true" alt="User">
+                            <div class="alytics-list-info">
+                                <strong>Layla Ismah Caren</strong>
+                                <span>Reset Password (Mahasiswa)</span>
+                            </div>
+                            <div class="alytics-list-actions">
+                                <i class="far fa-comment-dots" onclick="openModal()"></i>
+                                <i class="far fa-star"></i>
+                                <i class="fas fa-check" onclick="alert('Ditandai selesai')"></i>
+                            </div>
+                        </div>
+                        <div class="alytics-list-item">
+                            <img src="https://ui-avatars.com/api/?name=Satrio+Pandu&background=10b981&color=fff&rounded=true" alt="User">
+                            <div class="alytics-list-info">
+                                <strong>Satrio Pandu</strong>
+                                <span>Aktivasi VPN (Dosen)</span>
+                            </div>
+                            <div class="alytics-list-actions">
+                                <i class="far fa-comment-dots" onclick="openModal()"></i>
+                                <i class="far fa-star"></i>
+                                <i class="fas fa-check" onclick="alert('Ditandai selesai')"></i>
+                            </div>
+                        </div>
+                        <div class="alytics-list-item">
+                            <img src="https://ui-avatars.com/api/?name=M+Benedicta&background=8b5cf6&color=fff&rounded=true" alt="User">
+                            <div class="alytics-list-info">
+                                <strong>M.M Benedicta</strong>
+                                <span>Lupa Akun SSO (Dosen)</span>
+                            </div>
+                            <div class="alytics-list-actions">
+                                <i class="far fa-comment-dots" onclick="openModal()"></i>
+                                <i class="far fa-star"></i>
+                                <i class="fas fa-check" onclick="alert('Ditandai selesai')"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link-bottom">Semua antrean &rarr;</a>
+                </div>
+            </div>
+
+            <!-- BOTTOM CARDS -->
+            <div class="admin-bottom-cards">
+                <!-- Chats -->
+                <div class="alytics-card" style="padding: 20px;">
+                    <h3 style="font-size: 1rem;">Tim Teknis (Chats)</h3>
+                    <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">2 pesan belum dibaca</p>
+                    <div class="avatars-group">
+                        <div class="avatar-with-dot"><img src="https://ui-avatars.com/api/?name=A+D&background=3b82f6&color=fff&rounded=true" alt="User"><div class="avatar-dot"></div></div>
+                        <div class="avatar-with-dot"><img src="https://ui-avatars.com/api/?name=T+C&background=14b8a6&color=fff&rounded=true" alt="User"><div class="avatar-dot"></div></div>
+                        <div><img src="https://ui-avatars.com/api/?name=S+W&background=f43f5e&color=fff&rounded=true" alt="User"></div>
+                        <div><img src="https://ui-avatars.com/api/?name=R+K&background=8b5cf6&color=fff&rounded=true" alt="User"></div>
+                    </div>
+                </div>
+
+                <!-- New Deals (Quick Actions) -->
+                <div class="alytics-card" style="padding: 20px;">
+                    <h3 style="font-size: 1rem; margin-bottom: 15px;">Aksi Cepat</h3>
+                    <div class="pill-tags-container">
+                        <div class="pill-tag"><i class="fas fa-plus"></i> Buat Pengumuman</div>
+                        <div class="pill-tag"><i class="fas fa-plus"></i> Tambah Layanan</div>
+                        <div class="pill-tag"><i class="fas fa-plus"></i> Rekap Mingguan</div>
+                        <div class="pill-tag"><i class="fas fa-plus"></i> Ekspor Data CSV</div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Modal Detail Permintaan (Tetap Ada) -->
+    <div class="modal-overlay" id="modal-detail">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detail Permintaan</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 0.9rem; color: #475569; line-height: 1.5; margin-bottom: 20px;">
+                    <strong>Budiono Siregar</strong> (E3120055)<br>
+                    SSO Email - Mahasiswa<br><br>
+                    Tidak bisa login ke akun SSO email kampus. Sudah mencoba reset password tetapi tidak menerima email verifikasi. Mohon bantuan untuk mengaktifkan kembali akun email saya.
+                </p>
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button class="btn-primary" style="background-color: #f1f5f9; color: #0f172a;" onclick="closeModal()">Tutup</button>
+                    <button class="btn-primary" onclick="alert('Ditandai Selesai'); closeModal()">Tandai Selesai</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check session
+        if(sessionStorage.getItem('isLoggedIn') !== 'true' || sessionStorage.getItem('userRole') !== 'admin') {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

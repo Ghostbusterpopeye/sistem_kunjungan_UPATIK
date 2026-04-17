@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Daftar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #1a202c;">
+
+    <!-- AUTH LAYOUT -->
+    <div id="auth-layout" style="display: block;">
+        <section id="page-daftar" class="page auth-page active" style="display: block;">
+            <div class="auth-fullscreen-bg">
+                <div class="auth-overlay"></div>
+                <div class="auth-content-area">
+                    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Home</a>
+                    
+                    <div class="glass-card">
+                        <div class="glass-header">
+                            <h2>Buat Akun Baru</h2>
+                            <p>Lengkapi data di bawah ini.</p>
+                        </div>
+                        
+                        <div class="glass-form">
+                            <div class="input-with-icon">
+                                <i class="fas fa-user icon"></i>
+                                <input type="text" placeholder="Nama Lengkap">
+                            </div>
+                            <div class="input-with-icon">
+                                <i class="fas fa-id-card icon"></i>
+                                <input type="text" placeholder="NIM / NIP / Email">
+                            </div>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock icon"></i>
+                                <input type="password" placeholder="Buat Password">
+                            </div>
+                            
+                            <button class="btn-glass-primary" style="margin-top:20px" onclick="alert('Pendaftaran Berhasil!'); window.location.href='login.html'">Daftar Sekarang</button>
+                            
+                            <div class="glass-footer">
+                                <a href="login.html">Sudah punya akun? Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

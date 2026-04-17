@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal UPA TIK POLIJE - Riwayat Pengguna</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e2e8f0;
+            background-image: radial-gradient(circle at top right, #cbd5e1 0%, #e2e8f0 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRIVATE LAYOUT (SIDEBAR DASHBOARD) -->
+    <div id="private-layout" style="display: flex;">
+        <div class="main-container">
+            <div class="web-frame">
+                <nav class="sidebar">
+                    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+                    <div class="sidebar-user-info">
+                        <div class="upa-avatar-placeholder"></div>
+                        <h4>Portal User</h4>
+                    </div>
+                    <ul>
+                        <li class="active" onclick="window.location.href='user-riwayat.html'"><i class="fas fa-history"></i> Riwayat</li>
+                        <li onclick="window.location.href='user-form.html'"><i class="fas fa-plus-circle"></i> Buat Layanan</li>
+                        <li onclick="logoutUser()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</li>
+                    </ul>
+                </nav>
+
+                <main class="content-area light-bg">
+                    <!-- PAGE: RIWAYAT -->
+                    <section id="page-riwayat" class="page active" style="display: block;">
+                        <div class="page-header">
+                            <h1 class="content-title">Riwayat Kunjungan</h1>
+                            <button class="btn-primary" onclick="window.location.href='user-form.html'"><i class="fas fa-plus"></i> Tambah Kunjungan</button>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table class="riwayat-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Jenis Layanan</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>5 - 03 - 2026</td>
+                                        <td><span class="badge-type">SSO Email</span></td>
+                                        <td><span class="status-pending">Tertunda</span></td>
+                                        <td><a href="#" class="btn-detail">Lihat Detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6 - 01 - 2026</td>
+                                        <td><span class="badge-type">Reset Password</span></td>
+                                        <td><span class="status-success">Selesai</span></td>
+                                        <td><a href="#" class="btn-detail">Lihat Detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7 - 08 - 2025</td>
+                                        <td><span class="badge-type">SSO Email</span></td>
+                                        <td><span class="status-success">Selesai</span></td>
+                                        <td><a href="#" class="btn-detail">Lihat Detail</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check session
+        if(sessionStorage.getItem('isLoggedIn') !== 'true' || sessionStorage.getItem('userRole') !== 'user') {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
