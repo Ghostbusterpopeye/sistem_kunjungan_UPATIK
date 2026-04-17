@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,289 +9,124 @@
 </head>
 <body>
 
-    <div class="main-container">
-
-        <section id="page-home" class="page active">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo" style="cursor: pointer;" onclick="window.location.href='index.html'">
+                <div class="logo-icon"><i class="fas fa-desktop"></i></div>
+                <div class="logo-text">
+                    <strong>UPA TIK</strong>
+                    <span>Politeknik Negeri Jember</span>
+                </div>
+            </div>
             
-            <div class="web-frame">
-                <nav class="sidebar">
-                    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-                    <ul>
-                        <li class="active" onclick="navigateTo('home')">Beranda</li>
-                        <li onclick="navigateTo('layanan')">Layanan</li>
-                        <li onclick="navigateTo('riwayat')">Riwayat</li>
-                        <li onclick="navigateTo('login')">Login</li>
-                    </ul>
-                </nav>
-
-                <main class="content-area">
-                    <div class="hero-carousel">
-                        <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
-                        <div class="carousel-slide">
-                            <img src="OIP.webp" alt="Logo UPA TIK POLIJE" class="main-logo">
-                        </div>
-                        <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
-                    </div>
-
-                    <div class="quick-access">
-                        <div class="quick-item" onclick="navigateTo('layanan')">
-                            <i class="fas fa-headset"></i> Layanan
-                        </div>
-                        <div class="quick-item" onclick="navigateTo('login')">
-                            <i class="fas fa-user-circle"></i> Login
-                        </div>
-                        <div class="quick-item" onclick="navigateTo('riwayat')">
-                            <i class="fas fa-history"></i> Riwayat
-                        </div>
-                    </div>
-
-                    <article class="description-section">
-                        <h2>Deskripsi</h2>
-                        <p>Portal UPATIK menyediakan layanan teknologi informasi dan komunikasi bagi seluruh civitas akademika. Anda dapat mengajukan permintaan layanan, melaporkan keluhan, atau meminta bantuan teknis melalui portal ini.</p>
-                        <p>Gunakan menu Layanan untuk mengajukan permintaan baru, atau menu Riwayat untuk melihat status pengajuan Anda.</p>
-                    </article>
-                </main>
+            <div class="nav-links">
+                <a href="index.html" style="color: var(--primary);">Home</a>
+                <a href="#services">Services</a>
+                <a href="login.html" class="btn-login">Login</a>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <section id="page-layanan" class="page">
-
-            <div class="web-frame">
-                <nav class="sidebar">
-                    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-                    <ul>
-                        <li onclick="navigateTo('home')">Beranda</li>
-                        <li class="active" onclick="navigateTo('layanan')">Layanan</li>
-                        <li onclick="navigateTo('riwayat')">Riwayat</li>
-                        <li onclick="navigateTo('login')">Login</li>
-                    </ul>
-                </nav>
-
-                <main class="content-area light-bg">
-                    <h1 class="content-title">Layanan</h1>
-
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <i class="fas fa-unlock-alt card-icon"></i>
-                            <h3>Reset Password</h3>
-                        </div>
-                        <div class="service-card">
-                            <i class="fas fa-shield-alt card-icon"></i>
-                            <h3>Pemasangan VPN</h3>
-                        </div>
-                        <div class="service-card">
-                            <i class="fas fa-file-contract card-icon"></i>
-                            <h3>Keluhan</h3>
-                        </div>
-                        <div class="service-card full-width">
-                            <i class="fas fa-server card-icon"></i>
-                            <h3>maintenance</h3>
-                        </div>
-                    </div>
-
-                    <div class="action-bar">
-                        <button class="btn-primary" onclick="navigateTo('form-layanan')">Form Layanan</button>
-                    </div>
-                </main>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Solusi Cepat<br><span>Layanan IT Kampus</span></h1>
+                <p>Pusat bantuan teknologi informasi untuk civitas akademika Politeknik Negeri Jember. Kami siap membantu kelancaran digital Anda.</p>
+                <a href="login.html" class="btn-hero">Mulai Kunjungan &rarr;</a>
             </div>
-        </section>
+        </div>
+    </header>
 
-        <section id="page-form-layanan" class="page">
-    <div class="web-frame">
-        <nav class="sidebar">
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <ul>
-                <li onclick="navigateTo('home')">Beranda</li>
-                <li class="active" onclick="navigateTo('layanan')">Layanan</li>
-                <li onclick="navigateTo('riwayat')">Riwayat</li>
-                <li onclick="navigateTo('login')">Login</li>
-            </ul>
-        </nav>
-        <main class="content-area auth-bg">
-            <div class="form-container-card">
-                <h2>Form Layanan</h2>
-                <div class="form-group">
-                    <label>Nama:</label>
-                    <input type="text">
-                </div>
-                <div class="form-group">
-                    <label>NIM/NIK atau Email:</label>
-                    <input type="text">
-                </div>
-                <div class="form-group">
-                    <label>Status:</label>
-                    <input type="text">
-                </div>
-                <div class="form-group">
-                    <label>Kategori Masalah:</label>
-                    <input type="text">
-                </div>
-                <div class="form-group">
-                    <label>Deskripsi Masalah:</label>
-                    <textarea rows="3"></textarea>
-                </div>
-                <button class="btn-kirim" onclick="alert('Laporan Terkirim!'); navigateTo('riwayat')">Kirim</button>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan Prioritas Kami</h2>
+                <p>Kami menyediakan berbagai layanan teknis untuk mendukung kebutuhan digital Mahasiswa dan Dosen.</p>
             </div>
-        </main>
-    </div>
-</section>
-
-<section id="page-riwayat" class="page">
-    <div class="web-frame">
-        <nav class="sidebar">
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <ul>
-                <li onclick="navigateTo('home')">Beranda</li>
-                <li onclick="navigateTo('layanan')">Layanan</li>
-                <li class="active" onclick="navigateTo('riwayat')">Riwayat</li>
-                <li onclick="navigateTo('login')">Login</li>
-            </ul>
-        </nav>
-        <main class="content-area light-bg">
-            <h1 class="content-title">Riwayat Kunjungan</h1>
-            <div class="table-container">
-                <table class="riwayat-table">
-                    <thead>
-                        <tr>
-                            <th>Tanggal</th>
-                            <th>Jenis Layanan</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>5 - 03 - 2026</td>
-                            <td><span class="badge-type">SSO Email</span></td>
-                            <td><span class="status-pending">Tertunda</span></td>
-                            <td><a href="#" class="btn-detail">Lihat Detail</a></td>
-                        </tr>
-                        <tr>
-                            <td>6 - 01 - 2026</td>
-                            <td><span class="badge-type">Reset Password</span></td>
-                            <td><span class="status-success">Selesai</span></td>
-                            <td><a href="#" class="btn-detail">Lihat Detail</a></td>
-                        </tr>
-                        <tr>
-                            <td>7 - 08 - 2025</td>
-                            <td><span class="badge-type">SSO Email</span></td>
-                            <td><span class="status-success">Selesai</span></td>
-                            <td><a href="#" class="btn-detail">Lihat Detail</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </main>
-    </div>
-</section>
-
-        <section id="page-daftar" class="page">
-    <div class="web-frame">
-        <nav class="sidebar">
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <ul>
-                <li onclick="navigateTo('home')">Beranda</li>
-                <li onclick="navigateTo('layanan')">Layanan</li>
-                <li>Riwayat</li>
-                <li class="active" onclick="navigateTo('login')">Login</li>
-            </ul>
-        </nav>
-        <main class="content-area auth-bg">
-            <div class="auth-wrapper">
-                <h2 class="welcome-text">Selamat datang!</h2>
-                <div class="auth-card">
-                    <h3>Daftar</h3>
-                    <div class="form-group">
-                        <label>Nama:</label>
-                        <input type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Nim/Nip atau Email:</label>
-                        <input type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Pengguna:</label>
-                        <input type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Password:</label>
-                        <input type="password">
-                    </div>
+            
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="far fa-user"></i></div>
+                    <span class="service-badge">UNTUK MAHASISWA</span>
+                    <h3>Aktivasi Akun SSO</h3>
+                    <p>Layanan pembuatan dan aktivasi akun Single Sign On untuk Mahasiswa Baru.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <span class="service-badge">UNTUK MAHASISWA</span>
+                    <h3>Perbaikan Data Mahasiswa</h3>
+                    <p>Perubahan atau perbaikan data profil mahasiswa pada sistem informasi akademik.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <span class="service-badge">UNTUK DOSEN</span>
+                    <h3>Aktivasi VPN</h3>
+                    <p>Akses jaringan internal kampus dari luar area Politeknik Negeri Jember.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="far fa-file-alt"></i></div>
+                    <span class="service-badge">UNTUK DOSEN</span>
+                    <h3>Bantuan Input Nilai</h3>
+                    <p>Pendampingan teknis terkait sistem penilaian dan entri nilai mahasiswa.</p>
                 </div>
             </div>
-        </main>
-    </div>
-</section>
+        </div>
+    </section>
 
-        <section id="page-login" class="page">
-            <div class="web-frame">
-                <nav class="sidebar">
-                    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-                    <ul>
-                        <li onclick="navigateTo('home')">Beranda</li>
-                        <li onclick="navigateTo('layanan')">Layanan</li>
-                        <li onclick="navigateTo('riwayat')">Riwayat</li>
-                        <li class="active" onclick="navigateTo('login')">Login</li>
-                    </ul>
-                </nav>
-                <main class="content-area auth-bg">
-                    <div class="auth-wrapper">
-                        <h2 class="welcome-text">Selamat datang kembali!</h2>
-                        <div class="auth-card">
-                            <h3>Login</h3>
-                            <div class="form-group">
-                                <label>Pengguna:</label>
-                                <input type="text">
-                            </div>
-                            <div class="form-group">
-                                <label>Nim/Nip atau Email:</label>
-                                <input type="text">
-                            </div>
-                            <div class="form-group">
-                                <label>Password:</label>
-                                <input type="password">
-                            </div>
-                            <p class="auth-switch">Tidak punya akun? <span onclick="navigateTo('daftar')">Daftar</span></p>
-                            <button class="btn-auth" onclick="alert('Login Berhasil!')">Masuk</button>
-                        </div>
-                    </div>
-                </main>
+    <!-- CALL TO ACTION SECTION -->
+    <section class="cta">
+        <div class="container">
+            <h2>Butuh bantuan teknis lainnya?</h2>
+            <p>Sampaikan kendala Anda melalui sistem kunjungan kami. Tim teknis akan segera merespons permintaan Anda.</p>
+            <div class="cta-buttons">
+                <a href="login.html" class="btn-white">Login Sekarang</a>
+                <a href="#" class="btn-outline">Pelajari Manual</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="main-footer">
-            <div class="footer-container">
-                <div class="footer-col about">
-                    <div class="upa-profile">
-                        <div class="upa-avatar-placeholder"></div>
-                        <h3>UPA TIK POLIJE</h3>
-                    </div>
-                    <p class="upa-desc">Unit Penunjang Akademi Teknologi Informasi dan Komunitas (UPA TIK) menyediakan infrastruktur dan layanan digital untuk mendukung kegiatan akademik di Politeknik Negeri Jember.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>UPA TIK Polije</h3>
+                    <p>Unit Penunjang Akademik Teknologi Informasi dan Komunikasi (UPA TIK) menyediakan infrastruktur dan layanan digital untuk mendukung kegiatan akademik di Politeknik Negeri Jember.</p>
                 </div>
-
-                <div class="footer-col contact">
-                    <h4>Hubungi Kami</h4>
-                    <ul>
+                
+                <div class="footer-col">
+                    <h3>Hubungi Kami</h3>
+                    <ul class="footer-contact" style="list-style: none;">
                         <li><i class="fas fa-map-marker-alt"></i> Jl. Mastrip, Jember, Jawa Timur</li>
-                        <li><i class="fas fa-phone-alt"></i> +62 823-3349-7811</li>
-                        <li><i class="fas fa-envelope"></i> UPATIK@Gmail.com</li>
+                        <li><i class="fas fa-phone-alt"></i> (0331) 333532</li>
+                        <li><i class="far fa-envelope"></i> upt-tik@polije.ac.id</li>
                     </ul>
                 </div>
-
-                <div class="footer-col hours">
-                    <h4>Jam Layanan</h4>
-                    <p>Senin-Kamis: 07.00-16.00</p>
-                    <p>Jumat: 07.00</p>
-                    <p class="closed">Sabtu & Minggu: Tutup</p>
-                    <img src="OIP.webp" alt="Logo Maskot UPA" class="footer-maskot">
+                
+                <div class="footer-col">
+                    <h3>Jam Layanan</h3>
+                    <p>Senin - Kamis: 07:30 - 16:00<br>
+                    Jumat: 07:30 - 16:30<br>
+                    <span style="color: #60a5fa;">Sabtu & Minggu: Tutup</span></p>
                 </div>
             </div>
-        </footer>
+            
+            <div class="footer-bottom">
+                &copy; 2026 UPA TIK Politeknik Negeri Jember. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
-    </div>
-
-    <script src="script.js"></script>
 </body>
-
 </html>
-
